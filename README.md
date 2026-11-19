@@ -20,7 +20,7 @@ newest version.
 ## Claude Code
 
 ```
-/plugin marketplace add abaral7/upreap-equity-plugin
+/plugin marketplace add UpReap/equity-ai-plugin
 /plugin install upreap-equity@upreap
 ```
 
@@ -31,7 +31,7 @@ The first time Claude uses the connector it opens Equity so you can sign in and 
 1. Add the connector: in Equity, Settings → Analyst → **Connect your AI** → **Connect to Claude**. Or in Claude open
    Customize → Connectors → Add custom connector, name it `UpReap Equity` and paste `https://equity.upreap.com/mcp`.
 2. Add the skill: download `upreap-equity-analyst.zip` from the
-   [latest release](https://github.com/abaral7/upreap-equity-plugin/releases/latest) (don't unzip it), then upload it
+   [latest release](https://github.com/UpReap/equity-ai-plugin/releases/latest) (don't unzip it), then upload it
    under Customize → Skills and turn it on.
 
 ## ChatGPT
