@@ -1,10 +1,23 @@
 {
   "name": "upreap-equity",
-  "version": "1.0.0",
+  "displayName": "UpReap Equity",
+  "version": "1.0.1",
   "description": "Your UpReap Equity analyst in Claude: the connector to your portfolio, net worth and reports, plus the analyst skill that teaches Claude how to review, write and publish.",
-  "author": { "name": "UpReap", "url": "https://upreap.com" },
+  "author": {
+    "name": "UpReap",
+    "url": "https://upreap.com"
+  },
   "homepage": "https://upreap.com/equity/",
   "repository": "https://github.com/UpReap/equity-ai-plugin",
   "license": "MIT",
-  "keywords": ["finance", "portfolio", "nepse", "nepal", "investing", "analyst"]
+  "keywords": [
+    "finance",
+    "portfolio",
+    "nepse",
+    "nepal",
+    "investing",
+    "analyst"
+  ],
+  "privacyPolicyUrl": "https://equity.upreap.com/privacy",
+  "icon": "./.claude-plugin/icon.png"
 }

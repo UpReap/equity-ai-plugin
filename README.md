@@ -17,6 +17,18 @@ Every release attaches `upreap-equity-analyst.zip` (the skill, ready to upload t
 `upreap-equity-plugin.zip`. The Equity app reads the latest release, so Settings → Analyst → Skills always offers the
 newest version.
 
+## What it connects to and sends
+
+- The plugin has no code of its own. It adds one remote connector, `https://equity.upreap.com/mcp`, run by UpReap,
+  and one skill (instructions for Claude).
+- You sign in to Equity and approve the connection (OAuth). Claude then reads and writes your Equity data only
+  through that connector, within what you allow under Settings → Analyst → What it can reach.
+- It reads your portfolios, transactions, net worth, cash flow and market data from Equity, and writes reports, notes
+  and paper trades back. It changes balances, targets or goals only after showing you a preview and getting your OK,
+  and it can't place real trades or move money.
+- Nothing else is sent anywhere. [Privacy policy](https://equity.upreap.com/privacy) ·
+  [Terms](https://equity.upreap.com/terms) · Support: hello@upreap.com
+
 ## Claude Code
 
 ```
