@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "asks": [
+    { "title": "Portfolio check-up", "text": "Give my portfolio a check-up with UpReap Equity and publish it as a report." },
+    { "title": "Today's update", "text": "Write today’s daily update for my portfolio with UpReap Equity and publish it." },
+    { "title": "A stock dossier", "text": "Build a dossier on NABIL from my UpReap Equity data." },
+    { "title": "What moved my net worth", "text": "Using UpReap Equity, explain what moved my net worth this month, in plain words." },
+    { "title": "Explain a term with my stocks", "text": "Using my UpReap Equity holdings, explain price to book and what it says about each of my stocks." }
+  ],
+  "schedules": [
+    {
+      "title": "Daily update",
+      "when": "Every trading day (Sunday to Thursday) at 3:40 pm Nepal time",
+      "text": "Every trading day (Sunday to Thursday) at 3:40 pm Nepal time: write today’s daily update for my portfolio using UpReap Equity. Read my financial profile and standing rules first, follow the writing guide, and publish it as a report."
+    },
+    {
+      "title": "Weekly review",
+      "when": "Fridays at 10:00 am Nepal time",
+      "text": "Every Friday at 10:00 am Nepal time: write a weekly review of my portfolio using UpReap Equity. Compare the week with NEPSE and my sectors, check my price targets and standing rules, grade any calls that are due, and publish it as a report."
+    },
+    {
+      "title": "Monthly review",
+      "when": "On the 1st of each month at 10:00 am Nepal time",
+      "text": "On the 1st of each month at 10:00 am Nepal time: write a monthly review of my portfolio and net worth using UpReap Equity. Read my financial profile, goals and standing rules first, cover what changed and why, and publish it as a report."
+    }
+  ]
+}

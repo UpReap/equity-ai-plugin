@@ -1,0 +1,13 @@
+{
+  "name": "upreap",
+  "owner": { "name": "UpReap", "url": "https://upreap.com" },
+  "metadata": { "description": "UpReap's plugins for Claude." },
+  "plugins": [
+    {
+      "name": "upreap-equity",
+      "source": "./",
+      "description": "Your UpReap Equity analyst: the connector plus the analyst skill.",
+      "category": "finance"
+    }
+  ]
+}

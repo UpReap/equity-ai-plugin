@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "upreap-equity": {
+      "type": "http",
+      "url": "https://equity.upreap.com/mcp"
+    }
+  }
+}
