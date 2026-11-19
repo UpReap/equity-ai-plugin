@@ -1,7 +1,10 @@
 name: Release
+# A release is made from main whenever .claude-plugin/plugin.json has a version that isn't released yet:
+# the workflow creates the v<version> tag and attaches the skill zip, prompts.json and the plugin zip.
 on:
   push:
-    tags: ["v*"]
+    branches: [main]
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
@@ -9,19 +12,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check the plugin version matches the tag
+      - name: Read the version
+        id: v
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          v=$(jq -r .version .claude-plugin/plugin.json)
-          [ "v$v" = "${GITHUB_REF_NAME}" ] || { echo "plugin.json says $v, tag is ${GITHUB_REF_NAME}"; exit 1; }
           jq empty prompts/prompts.json
+          tag="v$(jq -r .version .claude-plugin/plugin.json)"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          if gh release view "$tag" >/dev/null 2>&1; then echo "new=no" >> "$GITHUB_OUTPUT"; echo "$tag is already released"; else echo "new=yes" >> "$GITHUB_OUTPUT"; fi
       - name: Build the files
+        if: steps.v.outputs.new == 'yes'
         run: |
           mkdir dist
           (cd skills && zip -r ../dist/upreap-equity-analyst.zip upreap-equity-analyst)
           cp prompts/prompts.json dist/prompts.json
           zip -r dist/upreap-equity-plugin.zip .claude-plugin .mcp.json skills README.md LICENSE
       - name: Publish the release
+        if: steps.v.outputs.new == 'yes'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release create "${GITHUB_REF_NAME}" dist/* --title "${GITHUB_REF_NAME}" --generate-notes
+        run: gh release create "${{ steps.v.outputs.tag }}" dist/* --target "$GITHUB_SHA" --title "${{ steps.v.outputs.tag }}" --generate-notes

@@ -48,7 +48,8 @@ Google offers this only in some countries and account types.
 ## Making a release
 
 1. Change the skill or prompts.
-2. Raise `version` in `.claude-plugin/plugin.json`.
-3. Tag it the same: `git tag v1.0.1 && git push origin v1.0.1`. The Release workflow builds and attaches the files.
+2. Raise `version` in `.claude-plugin/plugin.json` (e.g. 1.0.0 to 1.0.1).
+3. Push to main. The Release workflow sees a version that isn't released yet, tags it `v1.0.1` and attaches the
+   files. Pushes that don't change the version release nothing.
 
 The connector itself lives in the Equity app; this repo only points to it.
